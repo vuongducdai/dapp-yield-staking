@@ -69,14 +69,14 @@ const Main = () => {
       networkId
     )
     setRwd(rwdContract)
-    setRwdBalance(tetherBalance.toString())
+    setRwdBalance(rwdBalance.toString())
 
     // Load DecentralBank contract
     const decentralBankData = DecentralBank.networks[networkId]
     if (decentralBankData) {
       const decentralBank = new web3.eth.Contract(DecentralBank.abi, decentralBankData.address)
       setDecentralBank(decentralBank)
-      const stakingBalance = decentralBank.methods.stakingBalance(account).call()
+      const stakingBalance = await decentralBank.methods.stakingBalance(account).call()
       setStakingBalance(stakingBalance.toString())
     } else {
       window.alert('Error loading decentralBank')
@@ -102,8 +102,8 @@ const Main = () => {
     <>
       <Navbar account={account} />
       <div className="main-wrapper">
-        <BalanceTable />
-        <StakingComponent />
+        <BalanceTable stakingBalance={stakingBalance} rwdBalance={rwdBalance} />
+        <StakingComponent tetherBalance={tetherBalance} />
       </div>
     </>
   )
