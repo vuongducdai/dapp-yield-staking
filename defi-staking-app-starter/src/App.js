@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Web3 from 'web3'
-import Tether from '../truffle_abis/Tether.json'
-import RWD from '../truffle_abis/RWD.json'
-import DecentralBank from '../truffle_abis/DecentralBank.json'
-import Navbar from './NavBar'
+import Tether from './truffle_abis/Tether.json'
+import RWD from './truffle_abis/RWD.json'
+import DecentralBank from './truffle_abis/DecentralBank.json'
+import Navbar from './components/NavBar'
+import { BalanceTable } from './components/BalanceTable'
 
 function App() {
   const initialAccountAddress = '0x0'
@@ -99,7 +100,16 @@ function App() {
   return (
     <div className="App">
       <Navbar account={account} />
-      <header className="App-header">
+      <div className="mt-5">
+        <BalanceTable />
+        <div className="row">
+          <main role="main">
+            <div>s</div>
+          </main>
+        </div>
+        <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      </div>
+      {/* <header className="App-header">
         <p>Hello {account}</p>
         <a
           className="App-link"
@@ -109,7 +119,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   )
 }
