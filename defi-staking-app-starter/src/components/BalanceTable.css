@@ -1,0 +1,9 @@
+.balance-table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.balance-table {
+  text-align: center;
+}/*# sourceMappingURL=BalanceTable.css.map */

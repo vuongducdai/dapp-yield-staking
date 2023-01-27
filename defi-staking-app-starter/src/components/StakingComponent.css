@@ -1,0 +1,14 @@
+.staking-component-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button-wrapper {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}/*# sourceMappingURL=StakingComponent.css.map */
